@@ -8,13 +8,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
 </head>
 <body>
 	<div class="container">
 		<form action="VoHuyController" method="post">
-			<input type="text" name="txttk">
-			<input type="submit" name="tx" value="Search">
+			<input type="text" name="txttk"> <input type="submit"
+				name="tx" value="Search">
 		</form>
 
 		<%
@@ -24,19 +25,35 @@
 		} else
 			ds = (ArrayList<VoHuyBean>) request.getAttribute("lsttin");
 		%>
-		
-			<%
-				int n = ds.size();
-			for (int i = 0; i < n; i++) {
-			%>
-				<p>Tiêu đề: <%=ds.get(i).getTieude() %> </p><br>
-				<p>Tóm tắt: <%=ds.get(i).getTomtat() %> </p><br>
-				<p>Ngày đưa tin: <%=ds.get(i).getNgayduatin() %> </p><br>
-				<p>Nội dung: <%=ds.get(i).getNoidung() %> </p><br>
-				<p>----------------------------------------------- </p>
-			<%
-				}
-			%>
+
+		<%
+			int n = ds.size();
+		for (int i = 0; i < n; i++) {
+		%>
+		<p>
+			Tiêu đề:
+			<%=ds.get(i).getTieude()%>
+		</p>
+		<br>
+		<p>
+			Tóm tắt:
+			<%=ds.get(i).getTomtat()%>
+		</p>
+		<br>
+		<p>
+			Ngày đưa tin:
+			<%=ds.get(i).getNgayduatin()%>
+		</p>
+		<br>
+		<p>
+			Nội dung:
+			<%=ds.get(i).getNoidung()%>
+		</p>
+		<br>
+		<p>-----------------------------------------------</p>
+		<%
+			}
+		%>
 	</div>
 </body>
 </html>

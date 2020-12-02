@@ -33,9 +33,9 @@ public class VoHuyController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
+			request.setCharacterEncoding("utf-8");
 			String ma = request.getParameter("txttk");
 			VoHuyBo t = new VoHuyBo();
-			request.setCharacterEncoding("utf-8");
 			if(ma !=null) {
 						ArrayList<VoHuyBean> dsma = t.timTin(ma);
 						request.setAttribute("lstma", dsma);
